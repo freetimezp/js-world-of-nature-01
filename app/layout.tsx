@@ -1,0 +1,28 @@
+import "./globals.css";
+
+const myArray = [
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+  "circle",
+  "x-shape",
+];
