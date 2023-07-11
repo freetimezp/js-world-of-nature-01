@@ -1,6 +1,6 @@
 "use client";
 
-function ZoomSection() {
+const ZoomSection = () => {
   return (
     <>
       ZoomSection

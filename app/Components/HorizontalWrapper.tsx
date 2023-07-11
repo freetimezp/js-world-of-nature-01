@@ -1,6 +1,6 @@
 "use client";
 
-function HorizontalWrapper() {
+const HorizontalWrapper = () => {
   return (
     <>
       HorizontalWrapper

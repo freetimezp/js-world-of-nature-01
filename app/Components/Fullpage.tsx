@@ -1,6 +1,6 @@
 "use client";
 
-function Fullpage() {
+const Fullpage = () => {
   return (
     <>
       Fullpage

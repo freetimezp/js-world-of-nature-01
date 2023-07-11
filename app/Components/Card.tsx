@@ -1,6 +1,6 @@
 "use client";
 
-function Card() {
+const Card = () => {
   return (
     <>
       Card

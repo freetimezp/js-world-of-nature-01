@@ -1,4 +1,6 @@
-function SectionLayout() {
+"use client";
+
+const SectionLayout = () => {
   return (
     <>
       SectionLayout

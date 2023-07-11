@@ -1,6 +1,6 @@
 "use client";
 
-function Footer() {
+const Footer = () => {
   return (
     <>
       Footer
