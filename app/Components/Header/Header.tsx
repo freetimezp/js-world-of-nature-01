@@ -1,4 +1,5 @@
 "use client";
+import { useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { FaCrow, FaRocket } from 'react-icons/fa';
@@ -9,14 +10,30 @@ import Button from "../Button/Button";
 
 import header1 from '../../../public/images/header-1.jpg';
 
+import hover3d from '../../utils/hover';
+
 const abril = Abril_Fatface({
   subsets: ['latin'],
   weight: "400"
 });
 
 const Header = () => {
+  const hero = useRef<HTMLDivElement>(null);
+
+  const hoverHero = hover3d(hero, {
+    x: 30,
+    y: -40,
+    z: 30
+  });
+
+  const imageHover = hover3d(hero, {
+    x: 20,
+    y: -5,
+    z: 11
+  });
+
   return (
-    <HeaderStyled>
+    <HeaderStyled ref={hero}>
       <nav>
         <div className="logo">
           <Image src={Logo} alt="logo" width={40} />
@@ -68,12 +85,16 @@ const Header = () => {
           </div>
         </div>
         <div className="image-content">
-          <div className="image">
+          <div
+            className="image"
+            style={{ transform: hoverHero.transform, transition: hoverHero.transition }}
+          >
             <Image
               src={header1}
               alt="header"
               width="600"
               height="600"
+              style={{ transform: imageHover.transform, transition: imageHover.transition }}
             />
           </div>
         </div>
