@@ -8,6 +8,7 @@ import { cards } from './utils/cards';
 import Card from "./Components/Card";
 import Fullpage from "./Components/Fullpage";
 import TextSection from "./TextSection";
+import Footer from "./Components/Footer";
 
 export default function Home() {
   return (
@@ -43,6 +44,23 @@ export default function Home() {
         <SectionLayout>
           <TextSection />
         </SectionLayout>
+
+        <SectionLayout>
+          <div className="video">
+            <iframe
+              src="https://www.youtube.com/embed/uEcjgnzIv7g"
+              title="Youtube video"
+              allow="accelerometr; autoplay; clipboard-write; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </SectionLayout>
+
+        <SectionLayout>
+          <TextSection />
+        </SectionLayout>
+
+        <Footer />
       </MainStyled>
     </>
   );
@@ -56,6 +74,17 @@ const MainStyled = styled.main`
     display: grid;
     grid-template-columns: repeat(5, 30rem);
     gap: 4rem;
+  }
+
+  .video {
+    padding: 2rem;
+    background-color: #161616;
+    border-radius: 1rem;
+    iframe {
+      border: none;
+      width: 100%;
+      height: 52rem;
+    }
   }
 `;
 

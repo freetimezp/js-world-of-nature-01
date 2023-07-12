@@ -33,16 +33,6 @@ const TextSection = () => {
             <TextWrapper>
                 Lorem ipsum dolor, sit amet consectetur adipisicing.
             </TextWrapper>
-            <TextWrapper>
-                Lorem ipsum dolor, sit amet consectetur adipisicing.
-            </TextWrapper>
-            <TextWrapper>
-                Lorem ipsum dolor, sit amet consectetur adipisicing.
-            </TextWrapper>
-            <TextWrapper>
-                Lorem ipsum dolor, sit amet consectetur adipisicing.
-            </TextWrapper>
-
         </TextSectionStyled>
     )
 }
