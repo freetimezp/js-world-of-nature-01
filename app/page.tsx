@@ -6,6 +6,8 @@ import SectionLayout from "./Components/SectionLayout";
 
 import { cards } from './utils/cards';
 import Card from "./Components/Card";
+import Fullpage from "./Components/Fullpage";
+import TextSection from "./TextSection";
 
 export default function Home() {
   return (
@@ -23,6 +25,24 @@ export default function Home() {
             ))}
           </div>
         </SectionLayout>
+
+        <Fullpage />
+
+        <SectionLayout>
+          <div className="cards">
+            {cards?.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                image={card.image} />
+            ))}
+          </div>
+        </SectionLayout>
+
+        <SectionLayout>
+          <TextSection />
+        </SectionLayout>
       </MainStyled>
     </>
   );
@@ -36,7 +56,6 @@ const MainStyled = styled.main`
     display: grid;
     grid-template-columns: repeat(5, 30rem);
     gap: 4rem;
-    position: absolute;
   }
 `;
 

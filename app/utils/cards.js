@@ -3,7 +3,7 @@ import Cat1 from "/public/images/card-2.jpg";
 import Eagle1 from "/public/images/card-3.jpg";
 import Lion1 from "/public/images/card-4.jpg";
 import Dog1 from "/public/images/card-5.jpg";
-import Tiger1 from "/public/images/card-6.jpg";
+//import Tiger1 from "/public/images/card-6.jpg";
 
 export const cards = [
   {
@@ -41,13 +41,13 @@ export const cards = [
     image: Dog1,
     link: "/card-5.jpg",
   },
-  {
-    id: 6,
-    title: "Tiger",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique libero laborum officia modi laboriosam. Quod!",
-    image: Tiger1,
-    link: "/card-6.jpg",
-  },
+  // {
+  //   id: 6,
+  //   title: "Tiger",
+  //   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique libero laborum officia modi laboriosam. Quod!",
+  //   image: Tiger1,
+  //   link: "/card-6.jpg",
+  // },
 ];
 
 
