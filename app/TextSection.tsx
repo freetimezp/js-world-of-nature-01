@@ -43,7 +43,9 @@ const TextSectionStyled = styled.section`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 3rem;
+        z-index: 10;
+        margin-bottom: 4rem;
+        background-color: var(--color-bg);
     }
 `;
 

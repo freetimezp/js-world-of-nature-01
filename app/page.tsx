@@ -9,6 +9,7 @@ import Card from "./Components/Card";
 import Fullpage from "./Components/Fullpage";
 import TextSection from "./TextSection";
 import Footer from "./Components/Footer";
+import ZoomSection from "./Components/ZoomSection";
 
 export default function Home() {
   return (
@@ -54,6 +55,10 @@ export default function Home() {
               allowFullScreen
             ></iframe>
           </div>
+        </SectionLayout>
+
+        <SectionLayout>
+          <ZoomSection />
         </SectionLayout>
 
         <SectionLayout>

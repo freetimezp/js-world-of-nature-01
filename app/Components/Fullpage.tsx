@@ -30,6 +30,8 @@ const FullpageStyled = styled.div`
     border-radius: 8px;
     border: 1px solid var(--color-border);
     transition: border 0.3s ease-in-out;
+    z-index: 10;
+    background-color: var(--color-bg);
 
     img {
       padding: 1.5rem;

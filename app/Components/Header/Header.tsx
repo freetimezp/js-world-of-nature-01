@@ -61,6 +61,7 @@ const Header = () => {
           <Button name="Explore World" icon={<FaCrow />} />
         </ul>
       </nav>
+
       <div className="header-content">
         <div className="text-content">
           <h1 className={abril.className}>
@@ -111,6 +112,9 @@ const HeaderStyled = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    background-color: var(--color-bg);
+    z-index: 1000;
 
     .logo {
       display: flex;
@@ -168,6 +172,11 @@ const HeaderStyled = styled.header`
         color: #f2994a;
         transition: all 0.01s linear;
         padding-bottom: 1.5rem;
+        background-color: var(--color-bg);
+      }
+
+      p {
+        background-color: var(--color-bg);
       }
 
       .buttons {
