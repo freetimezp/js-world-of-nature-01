@@ -1,5 +1,7 @@
 "use client";
+import { useRef } from "react";
 import styled from "styled-components";
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Header from "./Components/Header/Header";
 import SectionLayout from "./Components/SectionLayout";
@@ -10,36 +12,51 @@ import Fullpage from "./Components/Fullpage";
 import TextSection from "./TextSection";
 import Footer from "./Components/Footer";
 import ZoomSection from "./Components/ZoomSection";
+import HorizontalWrapper from "./Components/HorizontalWrapper";
 
 export default function Home() {
+  const video = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: video,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.65, 1], [1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.6, 0.8, 0.9], [1, 0.8, 0.8, 0]);
+
   return (
     <>
       <Header />
       <MainStyled>
         <SectionLayout>
-          <div className="cards">
-            {cards?.map((card, index) => (
-              <Card
-                key={index}
-                title={card.title}
-                description={card.description}
-                image={card.image} />
-            ))}
-          </div>
+          <HorizontalWrapper height="40rem" direction={-1400}>
+            <div className="cards">
+              {cards?.map((card, index) => (
+                <Card
+                  key={index}
+                  title={card.title}
+                  description={card.description}
+                  image={card.image} />
+              ))}
+            </div>
+          </HorizontalWrapper>
         </SectionLayout>
 
         <Fullpage />
 
         <SectionLayout>
-          <div className="cards">
-            {cards?.map((card, index) => (
-              <Card
-                key={index}
-                title={card.title}
-                description={card.description}
-                image={card.image} />
-            ))}
-          </div>
+          <HorizontalWrapper height="40rem" direction={1400}>
+            <div className="cards" style={{ right: 0 }}>
+              {cards?.map((card, index) => (
+                <Card
+                  key={index}
+                  title={card.title}
+                  description={card.description}
+                  image={card.image} />
+              ))}
+            </div>
+          </HorizontalWrapper>
         </SectionLayout>
 
         <SectionLayout>
@@ -47,14 +64,18 @@ export default function Home() {
         </SectionLayout>
 
         <SectionLayout>
-          <div className="video">
+          <motion.div
+            className="video"
+            ref={video}
+            style={{ opacity: opacity, scale: scale }}
+          >
             <iframe
               src="https://www.youtube.com/embed/uEcjgnzIv7g"
               title="Youtube video"
               allow="accelerometr; autoplay; clipboard-write; encrypted-media"
               allowFullScreen
             ></iframe>
-          </div>
+          </motion.div>
         </SectionLayout>
 
         <SectionLayout>
@@ -76,6 +97,7 @@ const MainStyled = styled.main`
   width: 100%;
 
   .cards {
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(5, 30rem);
     gap: 4rem;
